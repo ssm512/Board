@@ -19,13 +19,32 @@ repositories {
 }
 
 dependencies {
+	// springboot
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	
+	// mybatis
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:4.0.1'
+	
+	// lombok
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
 	annotationProcessor 'org.projectlombok:lombok'
+	
+	// oracle
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+	
+	// devtool
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	
+	// 내장tomcat설정
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat-runtime'
+
+	// jsp설정 추가
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' 						// tomcat jsper
+	implementation 'jakarta.servlet:jakarta.servlet-api'  									// jsp servlet-api
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' 	// jstl
+	runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl'								// jstl
+	
+	// testing
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:4.0.1'
 	testCompileOnly 'org.projectlombok:lombok'
